@@ -57,10 +57,6 @@ for p in parts:
                         for i, d in enumerate(m["decisions"]))
         blocks.append(f"<section class='blk'><div class='band'><h3>決まったこと・分かったこと</h3><ol>{items}</ol></div></section>")
 
-    if m.get("open"):
-        rows = "".join(f"<div><span>?</span><div>{inline(o)}</div></div>" for o in m["open"])
-        blocks.append(sec_block("決まっていないこと", f"<div class='open'>{rows}</div>"))
-
     if p.get("highlights"):
         qs = "".join(
             f"<li><blockquote>{inline(h['quote'])}</blockquote>"
