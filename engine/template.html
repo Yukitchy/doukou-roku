@@ -85,6 +85,39 @@ mark{background:var(--mark);padding:0 .15em;border-radius:2px}
 .note{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px 28px;font-size:14px;color:var(--mute);line-height:1.85;margin-top:64px}
 .note b{color:var(--ink);font-weight:900}
 footer{padding:28px 0 56px;font-size:13px;color:var(--ash);border-top:1px solid var(--line);margin-top:28px}
+nav.sticky{position:sticky;top:0;z-index:8;background:rgba(250,247,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin:0 -28px}
+nav.sticky .swrap{max-width:880px;margin:0 auto;padding:10px 28px;display:flex;align-items:center;gap:18px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.sticky .swrap::-webkit-scrollbar{display:none}
+nav.sticky b{font-size:13px;font-weight:900;letter-spacing:.06em;color:var(--ash)}
+nav.sticky a{font-size:14px;font-weight:900;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
+nav.sticky a:hover{border-color:var(--acc)}
+nav.sticky .totop{margin-left:auto;font-weight:700;color:var(--ash);font-size:13px}
+section.blk>h3{display:flex;align-items:center;gap:14px}
+.openall{font:inherit;font-weight:900;font-size:12px;letter-spacing:.04em;border:1px solid var(--line);background:var(--card);color:var(--mute);border-radius:999px;padding:5px 14px;cursor:pointer}
+.openall:hover{border-color:var(--acc);color:var(--acc)}
+details.ch{border-bottom:1px solid var(--line);margin:0}
+details.ch:first-of-type{border-top:2px solid var(--ink)}
+details.ch>summary{list-style:none;cursor:pointer;padding:20px 0 20px 34px;position:relative}
+details.ch>summary::-webkit-details-marker{display:none}
+details.ch>summary::before{content:"";position:absolute;left:6px;top:31px;width:9px;height:9px;border-right:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg);transition:transform .15s}
+details.ch[open]>summary::before{transform:rotate(45deg);top:28px}
+details.ch>summary .chlead{border:0;padding:0;margin:6px 0 0;font-size:15px}
+details.ch .cnt{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;color:var(--ash);letter-spacing:.04em}
+details.ch .lines{padding:4px 0 26px 34px}
+details.fold{margin:28px 0 0;border-top:1px solid var(--line)}
+details.fold>summary{list-style:none;cursor:pointer;padding:16px 0 16px 26px;position:relative;font-size:16px;font-weight:900}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::before{content:"";position:absolute;left:4px;top:24px;width:8px;height:8px;border-right:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg);transition:transform .15s}
+details.fold[open]>summary::before{transform:rotate(45deg);top:21px}
+details.fold .cnt{font-weight:700;font-size:13px;color:var(--ash);margin-left:8px}
+details.fold .tl,details.fold .links{border-top:0;margin-top:-4px}
+details.prompt{padding:0}
+details.prompt>summary{list-style:none;cursor:pointer;padding:22px 26px}
+details.prompt>summary::-webkit-details-marker{display:none}
+details.prompt>summary .phead{margin:0}
+details.prompt>summary h4::before{content:"＋ ";color:var(--acc)}
+details.prompt[open]>summary h4::before{content:"− "}
+details.prompt>pre{margin:0 26px 26px}
 #mp{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:2px solid var(--ink);padding:10px 20px;display:none;align-items:center;gap:16px;font-size:13px;z-index:9}
 #mp.on{display:flex}#mp audio{flex:1;height:34px}
 #mpname{color:var(--mute);font-weight:700;max-width:34%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -99,9 +132,13 @@ footer{padding:28px 0 56px;font-size:13px;color:var(--ash);border-top:1px solid 
  .hw div,.links li{grid-template-columns:1fr;gap:6px}
  .prompt{padding:20px 18px;border-radius:16px}
  #mp{gap:10px;padding:8px 14px}#mpname{display:none}
+ nav.sticky{margin:0 -20px}nav.sticky .swrap{padding:10px 20px;gap:14px}
+ details.ch>summary{padding-left:28px}details.ch .lines{padding-left:0}
+ details.prompt>summary{padding:18px}details.prompt>pre{margin:0 18px 18px}
 }
 </style></head><body><div class="wrap">
-<header class="top"><div class="brand">{{BRAND}}</div><div class="pill">{{DATE}}</div></header>
+<nav class="sticky" id="sticky"><div class="swrap"><b>同行録</b>{{STICKY}}<a href="#top" class="totop">先頭</a></div></nav>
+<header class="top" id="top"><div class="brand">{{BRAND}}</div><div class="pill">{{DATE}}</div></header>
 <div class="hero">
  <div class="eyebrow">{{EYEBROW}}</div>
  <h1>{{H1}}</h1>
@@ -114,6 +151,11 @@ footer{padding:28px 0 56px;font-size:13px;color:var(--ash);border-top:1px solid 
 </div>
 <div id="mp"><span id="mpname"></span><audio id="mpAudio" controls></audio><button id="mpclose">閉じる</button></div>
 <script>
+function copyText(t){
+  try{if(navigator.clipboard&&isSecureContext){navigator.clipboard.writeText(t);return}}catch(e){}
+  const a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity=0;
+  document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove();
+}
 const mp=document.getElementById('mp'),ma=document.getElementById('mpAudio'),mn=document.getElementById('mpname');
 document.addEventListener('click',e=>{
   const a=e.target.closest('a.ts');if(a){e.preventDefault();const f=a.dataset.file,s=+a.dataset.sec;
@@ -123,9 +165,15 @@ document.addEventListener('click',e=>{
     const seek=()=>{try{ma.currentTime=s}catch(e){}};
     if(ma.readyState>0){seek()}else{ma.addEventListener('loadedmetadata',seek,{once:true});ma.load()}
     ma.play();return;}
-  const b=e.target.closest('button.copy');if(b){navigator.clipboard.writeText(b.dataset.copy).then(()=>{b.textContent='コピーした';setTimeout(()=>b.textContent='コピー',1400)});return;}
+  const b=e.target.closest('button.copy');if(b){e.preventDefault();e.stopPropagation();copyText(b.dataset.copy);b.textContent='コピーした';setTimeout(()=>b.textContent='コピー',1400);return;}
   if(e.target.id==='mpclose'){ma.pause();mp.classList.remove('on');}
 });
+document.querySelectorAll('.openall').forEach(btn=>btn.addEventListener('click',()=>{
+  const ds=[...btn.closest('section').querySelectorAll('details')];
+  const open=ds.some(d=>!d.open);
+  ds.forEach(d=>d.open=open);
+  btn.textContent=open?'すべて閉じる':'すべて開く';
+}));
 document.querySelectorAll('.hw input').forEach(c=>{try{c.checked=localStorage.getItem('todo:'+c.dataset.key)==='1'}catch(e){}
   c.addEventListener('change',()=>{try{localStorage.setItem('todo:'+c.dataset.key,c.checked?'1':'0')}catch(e){}})});
 </script></body></html>

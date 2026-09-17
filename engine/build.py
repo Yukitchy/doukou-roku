@@ -28,8 +28,9 @@ def ts(part, f, sec, text=None):
     return (f"<a class='ts' href='#' data-file=\"{E(f)}\" data-sec='{int(sec)}' "
             f"data-label=\"{E(label_of(part, f))}\">{text or mmss(sec)}</a>")
 
-def sec_block(title, inner):
-    return f"<section class='blk'><h3>{title}</h3>{inner}</section>"
+def sec_block(title, inner, foldable=False):
+    btn = "<button class='openall' type='button'>すべて開く</button>" if foldable else ""
+    return f"<section class='blk'><h3>{title}{btn}</h3>{inner}</section>"
 
 body, nav = [], []
 for p in parts:
@@ -47,7 +48,8 @@ for p in parts:
         topics = "".join(f"<li>{inline(t)}</li>" for t in m.get("topics", []))
         blocks.append(sec_block("議事録",
             f"<p class='summary'>{inline(m['summary'])}</p>"
-            + (f"<h4 style='margin-top:32px'>話したこと</h4><ul class='tl'>{topics}</ul>" if topics else "")))
+            + (f"<details class='fold'><summary>話したこと <span class='cnt'>{len(m['topics'])}件</span></summary>"
+               f"<ul class='tl'>{topics}</ul></details>" if topics else "")))
 
     if m.get("decisions"):
         items = "".join(f"<li><div class='num'>{i+1}</div><div><b>{inline(d)}</b></div></li>"
@@ -73,17 +75,20 @@ for p in parts:
                 f"<div class='say'><div class='who'>{E(l.get('who','—'))}"
                 f"<span class='t'>{ts(p, l['file'], l['t'])}</span></div>"
                 f"<p>{inline(l['text'])}</p></div>" for l in c.get("lines", []))
-            chs += (f"<div class='ch'><h4>{E(c['title'])}</h4>"
-                    f"<div class='chlead'>{inline(c.get('lead',''))}</div>{lines}</div>")
-        blocks.append(sec_block("読み物", chs))
+            chs += (f"<details class='ch'><summary><h4>{E(c['title'])}</h4>"
+                    f"<div class='chlead'>{inline(c.get('lead',''))}</div>"
+                    f"<span class='cnt'>{len(c.get('lines', []))}発言</span></summary>"
+                    f"<div class='lines'>{lines}</div></details>")
+        blocks.append(sec_block("読み物", chs, foldable=True))
 
     if p.get("prompts"):
         pr = "".join(
-            f"<div class='prompt'><div class='phead'><h4>{E(q['title'])}</h4>"
+            f"<details class='prompt'><summary><div class='phead'><h4>{E(q['title'])}</h4>"
             f"<button class='copy' data-copy=\"{E(q['body'])}\">コピー</button>"
-            f"<p class='puse'>{inline(q.get('use',''))}</p></div><pre>{E(q['body'])}</pre></div>"
+            f"<p class='puse'>{inline(q.get('use',''))}</p></div></summary>"
+            f"<pre>{E(q['body'])}</pre></details>"
             for q in p["prompts"])
-        blocks.append(sec_block("AIプロンプト集 — そのままコピーして貼れます", pr))
+        blocks.append(sec_block("AIプロンプト集 — コピーして貼るだけ", pr, foldable=True))
 
     if p.get("todos"):
         rows = "".join(
@@ -97,7 +102,9 @@ for p in parts:
             "<li><b>" + (f"<a href='{E(l['url'])}' target='_blank' rel='noopener'>{E(l['label'])}</a>"
                          if l.get("url") else E(l["label"]))
             + f"</b><span class='why'>{inline(l.get('note',''))}</span></li>" for l in p["links"])
-        blocks.append(sec_block("出てきた資料・ツール", f"<ul class='links'>{rows}</ul>"))
+        blocks.append(sec_block("出てきた資料・ツール",
+            f"<details class='fold'><summary>会話に出たもの <span class='cnt'>{len(p['links'])}件</span></summary>"
+            f"<ul class='links'>{rows}</ul></details>"))
 
     body.append(f"""<div class='part' id='{pid}'>
   <header><div class='ptime'>{E(p.get('time',''))}</div><h2>{E(p['title'])}</h2>
@@ -111,6 +118,8 @@ for k, v in {"TITLE": meta["title"], "BRAND": meta.get("brand", meta["title"]),
              "H1": meta.get("h1", meta["title"]), "LEAD": meta.get("lead", ""),
              "NOTE": meta.get("note", "")}.items():
     page = page.replace("{{" + k + "}}", E(v).replace("\n", "<br>") if k == "H1" else E(v))
-page = page.replace("{{NAV}}", "".join(nav)).replace("{{BODY}}", "".join(body))
+page = page.replace("{{NAV}}", "".join(nav))
+sticky = "".join(f"<a href='#{p['id']}'>{E(p['title'])}</a>" for p in parts)
+page = page.replace("{{STICKY}}", sticky).replace("{{BODY}}", "".join(body))
 (pack / "index.html").write_text(page)
 print("wrote", pack / "index.html")
