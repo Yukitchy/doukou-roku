@@ -12,7 +12,8 @@ parts = []
 for p_ in meta["parts"]:
     j = pack / p_["json"]
     d = json.loads(j.read_text()) if j.exists() else {}
-    parts.append({**p_, **d})
+    shown = p_.pop("prompts", True)
+    parts.append({**p_, **d, "prompts_shown": shown})
 
 E = html.escape
 def mmss(s):
@@ -81,7 +82,7 @@ for p in parts:
                     f"<div class='lines'>{lines}</div></details>")
         blocks.append(sec_block("読み物", chs, foldable=True))
 
-    if p.get("prompts"):
+    if p.get("prompts") and p.get("prompts_shown", True):
         pr = "".join(
             f"<details class='prompt'><summary><div class='phead'><h4>{E(q['title'])}</h4>"
             f"<button class='copy' data-copy=\"{E(q['body'])}\">コピー</button>"
