@@ -12,8 +12,8 @@ parts = []
 for p_ in meta["parts"]:
     j = pack / p_["json"]
     d = json.loads(j.read_text()) if j.exists() else {}
-    shown = p_.pop("prompts", True)
-    parts.append({**p_, **d, "prompts_shown": shown})
+    hide = p_.pop("hide", [])
+    parts.append({**p_, **d, "hide": hide})
 
 E = html.escape
 def mmss(s):
@@ -78,7 +78,7 @@ for p in parts:
                     f"<div class='lines'>{lines}</div></details>")
         blocks.append(sec_block("読み物", chs, foldable=True))
 
-    if p.get("prompts") and p.get("prompts_shown", True):
+    if p.get("prompts") and "prompts" not in p["hide"]:
         pr = "".join(
             f"<details class='prompt'><summary><div class='phead'><h4>{E(q['title'])}</h4>"
             f"<button class='copy' data-copy=\"{E(q['body'])}\">コピー</button>"
@@ -87,7 +87,7 @@ for p in parts:
             for q in p["prompts"])
         blocks.append(sec_block("AIプロンプト集 — コピーして貼るだけ", pr, foldable=True))
 
-    if p.get("todos"):
+    if p.get("todos") and "todos" not in p["hide"]:
         rows = "".join(
             f"<div><b>{E(t.get('who','—'))}</b><label><input type='checkbox' data-key='{pid}-{i}'>"
             f"<span>{inline(t['text'])}" + (f"<span class='due'>{E(t['due'])}</span>" if t.get('due') else '') + "</span></label></div>"

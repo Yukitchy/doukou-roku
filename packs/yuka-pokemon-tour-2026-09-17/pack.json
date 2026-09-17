@@ -13,7 +13,10 @@
      "file": "住吉2丁目16-10 45.m4a"
     }
    ],
-   "prompts": false
+   "hide": [
+    "prompts",
+    "todos"
+   ]
   },
   {
    "id": "tour",
@@ -57,7 +60,9 @@
      "file": "本州.m4a"
     }
    ],
-   "prompts": false
+   "hide": [
+    "prompts"
+   ]
   },
   {
    "id": "consult",
@@ -89,7 +94,7 @@
      "file": "鶴屋町1丁目3 6.m4a"
     }
    ],
-   "prompts": true
+   "hide": []
   }
  ],
  "brand": "同行録 — ゆかさん ポケモンツアー モニター",
