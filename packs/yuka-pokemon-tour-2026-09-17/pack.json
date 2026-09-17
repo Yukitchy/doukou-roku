@@ -1,0 +1,22 @@
+{"title":"ゆかさん ポケモンツアー モニター同行録","date":"2026-09-17（木）","subtitle":"ツアー前mtg → ツアー中 → ツアー後AIコンサル ／ 音声16本・約4時間",
+ "parts":[
+  {"id":"pre","title":"ツアー前mtg","json":"part1.json","audio":[
+    {"label":"12:13 住吉（自宅）","file":"住吉2丁目16-10 45.m4a"}]},
+  {"id":"tour","title":"ツアー中","json":"part2.json","audio":[
+    {"label":"12:56 南幸 集合","file":"南幸1丁目11-2.m4a"},
+    {"label":"12:59 南幸 出発","file":"南幸1丁目5-24.m4a"},
+    {"label":"13:36 南幸","file":"南幸1丁目5-30.m4a"},
+    {"label":"14:12 mango tree kitchen","file":"mango tree kitchen 横浜ジョイナス.m4a"},
+    {"label":"14:40 横浜駅西口","file":"横浜駅 西口.m4a"},
+    {"label":"15:03 駿河屋","file":"駿河屋 横浜店.m4a"},
+    {"label":"15:49 AFURI","file":"AFURI 横浜ジョイナス.m4a"},
+    {"label":"16:12 AFURI 2","file":"AFURI 横浜ジョイナス 2.m4a"},
+    {"label":"16:48 本州","file":"本州.m4a"}]},
+  {"id":"consult","title":"ツアー後AIコンサル","json":"part3.json","audio":[
+    {"label":"17:13 鶴屋町","file":"鶴屋町1丁目3.m4a"},
+    {"label":"18:13 鶴屋町 2","file":"鶴屋町1丁目3 2.m4a"},
+    {"label":"18:15 鶴屋町 3","file":"鶴屋町1丁目3 3.m4a"},
+    {"label":"18:19 鶴屋町 4","file":"鶴屋町1丁目3 4.m4a"},
+    {"label":"18:19 鶴屋町 5","file":"鶴屋町1丁目3 5.m4a"},
+    {"label":"18:19 鶴屋町 6","file":"鶴屋町1丁目3 6.m4a"}]}
+ ]}

@@ -1,0 +1,44 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<style>
+:root{--ink:#1c1c1c;--sub:#6b6b6b;--line:#e6e3dc;--bg:#fbfaf7;--acc:#d3462f;--mark:#fff1a8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75;font-size:16px}
+main{max-width:760px;margin:0 auto;padding:24px 16px 120px}
+.top h1{font-size:26px;margin:8px 0 4px;letter-spacing:.02em}.top .meta{color:var(--sub);font-size:13px}
+nav.parts{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:18px;padding:10px 0;margin:16px 0 8px;font-size:14px;z-index:5}
+nav.parts a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}nav.parts a:hover{border-color:var(--acc)}
+.part{padding:36px 0 8px;border-top:1px solid var(--line)}.part:first-of-type{border-top:0}
+.part header h2{font-size:22px;margin:2px 0 6px}.ptime{color:var(--acc);font-size:13px;font-weight:600;letter-spacing:.06em}.blurb{color:var(--sub);margin:0 0 14px}
+.tracks{display:flex;flex-direction:column;gap:6px;margin:6px 0 18px}.track{display:flex;align-items:center;gap:10px;font-size:13px}.tname{min-width:120px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track audio{height:32px;flex:1;min-width:0}
+.block{margin:26px 0}.block h3{font-size:15px;color:var(--sub);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;font-weight:600}.block h4{font-size:15px;margin:16px 0 4px}
+ul{padding-left:1.2em;margin:4px 0}li{margin:4px 0}.none{color:var(--sub);list-style:none;margin-left:-1.2em}
+.lead{margin:0 0 6px}mark{background:var(--mark);padding:0 2px;border-radius:2px}
+.ts{color:var(--acc);text-decoration:none;font-variant-numeric:tabular-nums;font-size:13px;margin-right:6px}.ts:hover{text-decoration:underline}
+.hl li{list-style:none;margin:8px 0;margin-left:-1.2em}.hl q{quotes:"「" "」"}.why{display:block;color:var(--sub);font-size:13px;margin-left:44px}
+.ch{margin:14px 0 22px}.ch h4{margin:0 0 2px}.ch blockquote{margin:0 0 10px;padding-left:10px;border-left:3px solid var(--line);color:var(--sub);font-size:14px}
+.bubble{margin:8px 0}.who{font-size:12px;color:var(--sub);font-weight:600}.who .t{margin-left:6px;font-weight:400}.say{margin:0}
+.prompt{border:1px solid var(--line);border-radius:8px;margin:10px 0;background:#fff}.phead{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid var(--line);font-size:14px}.puse{color:var(--sub);font-size:12px;flex:1}
+.copy{font:inherit;font-size:12px;border:1px solid var(--line);background:#fff;border-radius:6px;padding:3px 10px;cursor:pointer}.copy:active{background:var(--mark)}
+pre{white-space:pre-wrap;margin:0;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.65}
+.todo li{list-style:none;margin-left:-1.2em}.todo input{margin-right:4px}.due{color:var(--acc);font-size:12px;margin-left:6px}.todo :checked~*{color:var(--sub)}
+.links li{margin:6px 0}.links a{color:var(--acc)}
+#mp{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:8px 16px;display:none;align-items:center;gap:12px;font-size:13px}#mp.on{display:flex}#mp audio{flex:1;height:32px}#mpname{color:var(--sub);max-width:40%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style></head><body><main>
+<div class="top"><div class="meta">{{DATE}}</div><h1>{{TITLE}}</h1><div class="meta">{{SUB}}</div></div>
+<nav class="parts">{{NAV}}</nav>
+{{BODY}}
+</main>
+<div id="mp"><span id="mpname"></span><audio id="mpAudio" controls></audio></div>
+<script>
+const mp=document.getElementById('mp'),ma=document.getElementById('mpAudio'),mn=document.getElementById('mpname');
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a.ts');if(a){e.preventDefault();const f=a.dataset.file,s=+a.dataset.sec;
+    document.querySelectorAll('audio').forEach(x=>x!==ma&&x.pause());
+    if(ma.dataset.file!==f){ma.src='audio/'+f;ma.dataset.file=f;mn.textContent=f.replace(/\.m4a$/,'');}
+    mp.classList.add('on');ma.currentTime=s;ma.play();return;}
+  const b=e.target.closest('button.copy');if(b){navigator.clipboard.writeText(b.dataset.copy).then(()=>{b.textContent='コピーした';setTimeout(()=>b.textContent='コピー',1200)});}
+});
+document.querySelectorAll('.todo input').forEach(c=>{try{c.checked=localStorage.getItem('todo:'+c.dataset.key)==='1'}catch(e){}
+  c.addEventListener('change',()=>{try{localStorage.setItem('todo:'+c.dataset.key,c.checked?'1':'0')}catch(e){}})});
+</script></body></html>
