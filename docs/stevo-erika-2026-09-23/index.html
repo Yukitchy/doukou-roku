@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Akihabara Meeting Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#B8322A;
+  --ink:#1F2426;
+  --sub:#5F6B6E;
+  --line:#DDD8CF;
+  --bg:#FBF8F3;
+  --band:#F1ECE3;
+  --deco:rgba(255,255,255,.55);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;color:var(--ink);background:var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Noto Sans TC","PingFang HK","PingFang TC",Meiryo,sans-serif;
+  font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+html[lang=en] body{font-size:17px;line-height:1.65}
+body,p,li,td,th,div,span,b,small,summary,button,a,h1,h2,h3,h4{word-break:auto-phrase;line-break:strict;overflow-wrap:anywhere}
+h1,h2,h3,h4,.eyebrow{text-wrap:balance;line-height:1.35;letter-spacing:.01em}
+p{text-wrap:pretty;max-width:68ch;margin:0 0 .8em}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:rgba(251,248,243,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+.brand{font-weight:700;font-size:14px;letter-spacing:.08em;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.lang{display:flex;gap:2px;background:var(--band);border-radius:999px;padding:3px}
+.lang{flex:none}
+.lang button{white-space:nowrap;word-break:keep-all;overflow-wrap:normal;border:0;background:transparent;font:inherit;font-size:14px;font-weight:600;color:var(--sub);padding:5px 13px;border-radius:999px;cursor:pointer;transition:background .12s ease,color .12s ease}
+.lang button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(60,40,20,.12)}
+
+/* hero */
+.hero{padding:56px 0 36px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;pointer-events:none;top:-60px;right:-80px;width:260px;height:260px;background:var(--deco);border-radius:0 0 0 100%}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:.14em;color:var(--accent);margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,42px);margin:0 0 6px;font-weight:700}
+.subtitle{font-size:clamp(17px,2.6vw,21px);color:var(--sub);margin:0 0 22px;font-weight:500}
+.lead{font-size:17px;max-width:62ch}
+.note{background:var(--band);padding:14px 18px;border-radius:12px;font-size:15px;color:var(--ink);max-width:62ch;margin:18px 0 0}
+
+/* people */
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:8px 0 0}
+.person b{display:block;font-size:17px;margin-bottom:2px}
+.person span{color:var(--sub);font-size:15px;line-height:1.6;display:block}
+
+/* sections */
+section{padding:44px 0 8px}
+h2{font-size:clamp(22px,3.4vw,28px);margin:0 0 18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+ul.plain{list-style:none;margin:0;padding:0}
+ul.plain li{padding:10px 0 10px 22px;position:relative;border-top:1px solid var(--line)}
+ul.plain li:last-child{border-bottom:1px solid var(--line)}
+ul.plain li::before{content:"";position:absolute;left:4px;top:1.05em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+ul.plain.hw li::before{border-radius:2px;transform:rotate(45deg)}
+.who{font-weight:700;margin-right:.5em}
+
+/* idea */
+.idea{padding:30px 0 26px;border-top:2px solid var(--ink)}
+.idea:first-of-type{border-top:0}
+.tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;padding:2px 10px;border-radius:999px;background:var(--band);color:var(--sub);margin-bottom:10px}
+.tag[data-k="決定"],.tag[data-k="Decided"],.tag[data-k="已決定"]{background:var(--accent);color:#fff}
+.idea h3{font-size:clamp(20px,3vw,25px);margin:0 0 10px}
+.idea .what{font-size:17px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:18px}
+.lbl{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--sub);margin:0 0 8px;text-transform:uppercase}
+html[lang=ja] .lbl,html[lang=zh] .lbl{letter-spacing:.2em;text-transform:none}
+.roles{margin:0;padding:0;list-style:none}
+.roles li{display:grid;grid-template-columns:5.5em 1fr;gap:10px;padding:6px 0;border-top:1px solid var(--line);font-size:15px}
+.roles li:last-child{border-bottom:1px solid var(--line)}
+html[lang=en] .roles li{grid-template-columns:7em 1fr}
+.roles b{font-weight:700}
+.open{margin:0;padding-left:1.2em;font-size:15px}
+.open li{margin:4px 0}
+.next{background:var(--band);border-radius:12px;padding:12px 16px;margin-top:18px;font-size:15px}
+.next b{color:var(--accent);margin-right:.6em}
+.quotes{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+blockquote{margin:0;padding:12px 16px;border-left:3px solid var(--accent);background:#fff;border-radius:0 12px 12px 0;font-size:15px}
+blockquote .q{margin:0 0 6px;font-style:italic}
+blockquote .tr{margin:0 0 6px;color:var(--ink)}
+blockquote cite{font-style:normal;color:var(--sub);font-size:13px}
+
+/* misc lists */
+.band{background:var(--band);border-radius:16px;padding:22px 24px}
+.band h2{font-size:19px;margin-bottom:10px}
+.band ul{margin:0;padding-left:1.2em;font-size:15px}
+.band li{margin:4px 0}
+.misc{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+footer{padding:40px 0 60px;color:var(--sub);font-size:14px}
+footer a{font-weight:600}
+.reveal{animation:reveal-in linear both;animation-timeline:view();animation-range:entry 5% cover 25%}
+@keyframes reveal-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@supports not (animation-timeline:view()){.reveal{animation:none;opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:760px){
+  .people,.two,.grid2,.quotes,.misc{grid-template-columns:1fr}
+  .people{gap:14px}
+  .hero{padding:36px 0 26px}
+  .top .wrap{height:52px}
+  .lang button{padding:5px 10px;font-size:13px}
+  .brand{font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <div class="brand" id="brand"></div>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang="ja" aria-pressed="false">日本語</button>
+    <button data-lang="en" aria-pressed="false">English</button>
+    <button data-lang="zh" aria-pressed="false">中文</button>
+  </div>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow" id="date"></p>
+  <h1 id="title"></h1>
+  <p class="subtitle" id="subtitle"></p>
+  <p class="lead" id="lead"></p>
+  <div class="note" id="source_note"></div>
+  <div class="people" id="people"></div>
+</div></header>
+
+<main>
+  <section class="reveal"><div class="wrap two">
+    <div><h2 id="dec_t"></h2><ul class="plain" id="dec_l"></ul></div>
+    <div><h2 id="hw_t"></h2><ul class="plain hw" id="hw_l"></ul></div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2 id="ideas_t"></h2>
+    <div id="ideas"></div>
+  </div></section>
+
+  <section class="reveal"><div class="wrap misc">
+    <div class="band"><h2 id="ctx_t"></h2><ul id="ctx_l"></ul></div>
+    <div class="band"><h2 id="chat_t"></h2><ul id="chat_l"></ul></div>
+  </div></section>
+
+  <section class="reveal"><div class="wrap">
+    <div class="band"><h2 id="unc_t"></h2><ul id="unc_l"></ul></div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <p><a id="tr_link" href="transcript.html"></a></p>
+  <p id="foot"></p>
+</div></footer>
+
+<script>
+const DATA = {"ja": {"meta": {"title": "秋葉原ミーティング記録", "subtitle": "Stevo × Erika × ユウキ", "date": "2026年9月23日（火）秋葉原", "lead": "この日の会話のうち、いっしょにやれそうなことだけを抜き出して1枚にまとめました。録音に無いことは書いていません。聞き取れなかった箇所は［不明瞭］のまま残しています。", "source_note": "元の録音は2本。録音1（13分）はマイクが塞がれていたようで全体がほぼ無音のため文字起こしできませんでした。このページは録音2（32分）だけをもとにしています。"}, "people": [{"name": "Stevo", "role": "YouTubeチャンネル Movingsocks。視聴者は香港の30〜40代、男女半々"}, {"name": "Erika", "role": "Stevoの奥さんで、チャンネルの編集担当"}, {"name": "ユウキ", "role": "秋葉原のアニメ・ゲーム好き向けプライベートツアーガイド。日本語の先生でもある"}], "decisions": {"title": "この日に決まったこと", "items": ["今日そのまま2〜3時間の撮影をする（Stevoの提案にユウキが同意）", "冒頭の自己紹介は秋葉原駅の外で撮る。テーマは「秋葉原の隠れた名所（hidden gems）」", "動画では秘密の場所を明かさない。「もっと知りたければツアーへ」という見せ方にする", "日本文化の解説は今日の動画とは別に、食事しながら話す回として作る（Erikaが広東語で導入コメントを収録）", "今日はこのあと、高架下のゲームカフェ（BEEPの近く）とガンダムの店へ行く"]}, "homework": {"title": "宿題", "items": [{"who": "ユウキ", "what": "女性ガイドをしている知り合いを、StevoとErikaに紹介する（「興味があればつなぐ」と申し出）"}, {"who": "Erika", "what": "香港の女性視聴者が日本で何を求めているかをユウキに伝える（「何を探しているか教えられる」と申し出）"}, {"who": "Stevo・Erika", "what": "今日撮った素材を編集して公開する"}, {"who": "3人", "what": "動画に出す場所と出さない場所を、公開前にすり合わせる"}]}, "ideas": [{"id": "video", "tag": "決定", "title": "Movingsocksでの秋葉原コラボ動画", "what": "ユウキがStevoとErikaを秋葉原の「隠れた名所」へ案内する様子を撮り、Movingsocksで公開する。今日撮影する。", "roles": [{"who": "ユウキ", "does": "案内役。行き先の選定と現地での解説"}, {"who": "Stevo", "does": "出演と進行。冒頭の自己紹介を駅の外で撮る"}, {"who": "Erika", "does": "編集。広東語の導入コメント"}], "next": "このあと撮影。冒頭は秋葉原駅の外で自己紹介、その後ゲームカフェとガンダムの店へ。", "open": ["店内の撮影許可。秋葉原の店は撮影を断るところが多く、個人ガイドのユウキでは交渉が通りにくい（本人談）", "どの場所を明かし、どこを伏せるか（今日行く飲み屋のような場所は伏せる方針だが、線引きは未確認）"], "quotes": [{"who": "Stevo", "t": "12:16", "text": "We should do the proper introduction, maybe at the train station. Outside of Akihabara.", "ja": "ちゃんとした自己紹介を撮ろう。駅で、秋葉原の外で。"}, {"who": "ユウキ", "t": "17:26", "text": "You should show them, but they won't be able to find it easily themselves. If you want to know more, you can take my tour.", "ja": "見せるけど、自力では見つけにくい場所にする。もっと知りたければツアーへ、という形。"}]}, {"id": "hk", "tag": "検討中", "title": "香港の視聴者に合わせたツアーの見せ方", "what": "香港の人は買い物とアニメが好きで、家族連れが多い。ツアーを「文化と最新のゲーム事情の話＋ぼったくられない買い物＋ユニークなカフェ」として動画で見せる。店名は動画では出さない。", "roles": [{"who": "Erika", "does": "香港の視聴者が何に反応するかの助言。動画での見せ方の提案"}, {"who": "Stevo", "does": "視聴者の好み（ガンダム、ベイブレード、Sega・Neo Geoのグッズなど）の情報"}, {"who": "ユウキ", "does": "安く買える店、家族向けの回し方（子どもだけ案内して親は買い物、というケースが実際にある）"}], "next": "まず今日の動画で反応を見る。", "open": ["買い物目的のアジア系のお客さんは自分で調べて回るのでツアーを買いにくい、というユウキの見立てにどう答えるか", "香港向けの価格や所要時間は話に出ていない"], "quotes": [{"who": "Erika", "t": "7:08", "text": "In the tours, talk about Japanese culture, what's the hottest gaming, and say that you will bring them to some really nice unique cafe and shopping areas where you can buy a good deal rather than being ripped off.", "ja": "ツアーでは日本文化や今いちばん熱いゲームの話をして、ユニークなカフェと、ぼったくられずに安く買える場所へ連れて行く、と伝える。"}, {"who": "ユウキ", "t": "18:09", "text": "Those who like shopping, they don't want to spend their money for a tour like mine. They can just find the place by themselves.", "ja": "買い物好きの人は自分で場所を見つけられるので、僕のようなツアーにはお金を使いたがらない。"}]}, {"id": "beauty", "tag": "アイデア", "title": "女性向け「ビューティーデー」（Erikaの提案）", "what": "香港・台湾の女性向けに、日本でのヘアカット、マッサージ、コスメ（SK-IIなど）、日本風メイクのレッスン、買い物を1日にまとめたツアー。秋葉原とは別の場所で、別の事業として。", "roles": [{"who": "Erika", "does": "女性視聴者が求めているものを伝える（発案者）"}, {"who": "ユウキ", "does": "日本側の店や会社とのつなぎ。女性ガイドの知り合いを紹介"}, {"who": "Stevo", "does": "「やるべき」と賛成。チャンネルでの発信"}], "next": "ユウキが女性ガイドの知り合いをつなぐ。Erikaが求められている内容を具体化する。", "open": ["誰がガイドするか（女性の日本人パートナーが必要、というのが共通認識。ユウキの知り合いのガイドか、ユウキのパートナーが東京に来る案も出た）", "どこでやるか（秋葉原ではない。銀座、原宿、渋谷が候補として会話に出ただけ）", "価格、所要時間、提携する店はすべて未定"], "quotes": [{"who": "Erika", "t": "15:11", "text": "Bring them to shopping and also some nice haircuts, massage. They need the Japanese treatment. All of my friends will come here for a haircut. Cosmetic, SK-II. They will do makeup lessons for Japanese style.", "ja": "買い物と、ヘアカットやマッサージ。日本の施術が欲しいの。私の友達はみんなヘアカットのために来る。コスメ、SK-II。日本風のメイクのレッスンも。"}, {"who": "Stevo", "t": "16:06", "text": "Yeah, I think we should do this.", "ja": "うん、これはやるべきだと思う。"}]}, {"id": "culture", "tag": "決定", "title": "日本文化を話す別シリーズ（食事しながら）", "what": "日本人には常識でも香港の人は知らないことを、ユウキが食事しながら率直に話す動画。今日の話題の中では、パチンコの換金の仕組み、ドン・キホーテと「ヤンキー」文化、ヴェルファイアのイメージ、日本の家族の距離感、30歳前の結婚観と女性の働き方、ちいかわとLabubuとゆるキャラの人気の構造、が候補として出た。", "roles": [{"who": "ユウキ", "does": "話し手"}, {"who": "Stevo", "does": "聞き手。視聴者が知りたい質問を出す"}, {"who": "Erika", "does": "広東語での導入と編集"}], "next": "今日の撮影の続きで「パチンコの体験談」から話す流れになった。", "open": ["率直に話すと嫌われるかもしれない、というユウキの懸念（Stevoは「知られていない事実を話しているだけ」と後押し）", "どの話題を先に出すかは未定"], "quotes": [{"who": "Stevo", "t": "11:16", "text": "I think this is a separate video talking about culture. We should talk about this because a lot of people want to know.", "ja": "これは文化の話として別の動画にしよう。知りたい人がたくさんいる。"}, {"who": "Erika", "t": "31:18", "text": "I would meet up with Yuki-san to eat and discuss the unknown Japanese culture.", "ja": "ユウキさんと食事しながら、知られていない日本文化の話をしていきます。（広東語の導入コメントの英訳）"}]}], "context": {"title": "背景として出た話", "items": ["円安はあと数年続くとStevoは見ていて、観光客相手の仕事はまだ伸びる、という点で3人とも一致", "中国本土の渡航自粛は香港・台湾には関係ない（Erika）", "白人のお客さんは体験重視、中国本土のお客さんは買い物重視、というユウキの実感", "ユウキが会社にしていない理由は「めんどくさい」「費用がかかる」「まだ収入が小さい」。収入が増えたら考える", "ユウキのパートナーは金沢でガイドをしていて、東京に来る案はユウキ自身も考えている"]}, "chat": {"title": "雑談だった話（記録だけ）", "items": ["パチンコで1日に勝った最高額の話", "仮面ライダーBLACK RXの俳優の店の話（Stevo）", "ちいかわの話がどこまでも深い（3人とも）", "中野ブロードウェイでマクドナルドのちいかわが4,000円だった（Stevo）", "Stevoのいちばん好きなポケモンはヤドン"]}, "unclear": {"title": "聞き取れなかった・確認したい箇所", "items": ["冒頭（0:13）Erikaが編集ソフトの名前を挙げた部分。「PowerMirror」と聞こえるが不明瞭", "3:48 Erikaの「Japanese politics」は「politics」か「policies」か不明瞭", "22:32 Stevoの「Other consultants?」の前後", "録音1（13分）は全体が無音に近く、内容を確認できていない"]}, "transcript_link": "文字起こし（英語原文・話者付き）"}, "en": {"meta": {"title": "Akihabara Meeting Notes", "subtitle": "Stevo x Erika x Yuki", "date": "September 23, 2026 (Tuesday), Akihabara", "lead": "This page pulls out only the parts of that day's conversation that could turn into joint work. Nothing here goes beyond what is in the recording. Parts that could not be heard clearly are marked [unclear].", "source_note": "There were two original recordings. Recording 1 (13 minutes) appears to have had the microphone blocked and is almost entirely silent, so it could not be transcribed. This page is based only on Recording 2 (32 minutes)."}, "people": [{"name": "Stevo", "role": "YouTube channel Movingsocks. Viewers are mostly Hong Kong men and women in their 30s and 40s."}, {"name": "Erika", "role": "Stevo's wife. Handles editing for the channel."}, {"name": "Yuki", "role": "Private tour guide in Akihabara for anime and game fans. Also a Japanese teacher."}], "decisions": {"title": "Decisions made that day", "items": ["Film for 2 to 3 hours today as is (Stevo proposed this and Yuki agreed).", "Film the opening self introduction outside Akihabara Station. The theme is \"hidden gems of Akihabara.\"", "The video will not reveal the secret spots. The framing will be, if you want to know more, take the tour.", "Explanations of Japanese culture will be made as a separate series, filmed over meals, apart from today's video. (Erika will record a Cantonese introduction comment.)", "After this, today's plan is to go to a game cafe under the railway tracks (near BEEP) and a Gundam shop."]}, "homework": {"title": "Action items", "items": [{"who": "Yuki", "what": "Introduce an acquaintance who works as a female guide to Stevo and Erika (offered to connect them if they are interested)."}, {"who": "Erika", "what": "Tell Yuki what female viewers in Hong Kong are looking for in Japan (offered to share what they are looking for)."}, {"who": "Stevo and Erika", "what": "Edit and publish the footage filmed today."}, {"who": "All three", "what": "Agree on which locations will and will not appear in the video before it is published."}]}, "ideas": [{"id": "video", "tag": "Decided", "title": "Akihabara collab video for Movingsocks", "what": "Film Yuki guiding Stevo and Erika to Akihabara's \"hidden gems\" and publish it on Movingsocks. Filming happens today.", "roles": [{"who": "Yuki", "does": "Guide. Chooses the locations and explains them on site."}, {"who": "Stevo", "does": "On camera and hosting. Films the opening self introduction outside the station."}, {"who": "Erika", "does": "Editing. Cantonese introduction comment."}], "next": "Filming continues after this. The opening self introduction is outside Akihabara Station, then on to the game cafe and the Gundam shop.", "open": ["Permission to film inside shops. Many shops in Akihabara refuse filming, and as an individual guide Yuki finds it hard to negotiate this (his own comment).", "Which locations to reveal and which to keep hidden. The plan is to keep places like the bar they are visiting today hidden, but the exact line has not been confirmed."], "quotes": [{"who": "Stevo", "t": "12:16", "text": "We should do the proper introduction, maybe at the train station. Outside of Akihabara.", "ja": ""}, {"who": "Yuki", "t": "17:26", "text": "You should show them, but they won't be able to find it easily themselves. If you want to know more, you can take my tour.", "ja": ""}]}, {"id": "hk", "tag": "Under discussion", "title": "How to present tours for Hong Kong viewers", "what": "Hong Kong visitors like shopping and anime, and many travel with family. The video will present the tour as culture and the latest gaming trends, plus shopping without getting ripped off, plus unique cafes. Shop names will not appear in the video.", "roles": [{"who": "Erika", "does": "Advises on what Hong Kong viewers respond to. Suggests how to present it in the video."}, {"who": "Stevo", "does": "Provides information on viewer preferences (Gundam, Beyblade, Sega and Neo Geo merchandise, etc.)."}, {"who": "Yuki", "does": "Knows shops with good prices, and how to run things for families (there are actual cases where only the children are guided while the parents shop)."}], "next": "First see how viewers react to today's video.", "open": ["How to respond to Yuki's view that Asian customers who come mainly to shop tend to research and get around on their own, making them unlikely to buy a tour.", "Pricing and duration aimed at Hong Kong visitors were not discussed."], "quotes": [{"who": "Erika", "t": "7:08", "text": "In the tours, talk about Japanese culture, what's the hottest gaming, and say that you will bring them to some really nice unique cafe and shopping areas where you can buy a good deal rather than being ripped off.", "ja": ""}, {"who": "Yuki", "t": "18:09", "text": "Those who like shopping, they don't want to spend their money for a tour like mine. They can just find the place by themselves.", "ja": ""}]}, {"id": "beauty", "tag": "Idea", "title": "A \"beauty day\" for women (Erika's suggestion)", "what": "A one day tour for women from Hong Kong and Taiwan combining a haircut in Japan, massage, cosmetics such as SK-II, a Japanese style makeup lesson, and shopping. This would be run as a separate business, in a different location from Akihabara.", "roles": [{"who": "Erika", "does": "Communicates what female viewers want (originated the idea)."}, {"who": "Yuki", "does": "Connects with shops and companies on the Japan side. Introduces an acquaintance who is a female guide."}, {"who": "Stevo", "does": "Agrees this should be done. Will promote it on the channel."}], "next": "Yuki will connect the female guide acquaintance. Erika will work out the details of what is needed.", "open": ["Who will guide (there is agreement that a Japanese female partner is needed. Options raised include Yuki's guide acquaintance, or Yuki's own partner coming to Tokyo).", "Where to hold it (not Akihabara. Ginza, Harajuku and Shibuya were mentioned only as possibilities in conversation).", "Price, duration, and partner shops are all undecided."], "quotes": [{"who": "Erika", "t": "15:11", "text": "Bring them to shopping and also some nice haircuts, massage. They need the Japanese treatment. All of my friends will come here for a haircut. Cosmetic, SK-II. They will do makeup lessons for Japanese style.", "ja": ""}, {"who": "Stevo", "t": "16:06", "text": "Yeah, I think we should do this.", "ja": ""}]}, {"id": "culture", "tag": "Decided", "title": "A separate series about Japanese culture (over meals)", "what": "A video where Yuki speaks candidly over a meal about things that are common knowledge to Japanese people but unknown to people in Hong Kong. Topics raised today as candidates include how pachinko cash out works, Don Quijote and \"yankii\" culture, the image of the Vellfire, the sense of distance in Japanese families, views on marriage before age 30 and how women work, and the structure behind the popularity of Chiikawa, Labubu, and yuru-chara.", "roles": [{"who": "Yuki", "does": "Speaker."}, {"who": "Stevo", "does": "Interviewer. Asks the questions viewers want answered."}, {"who": "Erika", "does": "Cantonese introduction and editing."}], "next": "As a continuation of today's filming, the plan is to start with pachinko personal stories.", "open": ["Yuki's concern that speaking candidly might make him unpopular (Stevo encouraged him, saying he is only sharing facts that are not widely known).", "Which topic to lead with is undecided."], "quotes": [{"who": "Stevo", "t": "11:16", "text": "I think this is a separate video talking about culture. We should talk about this because a lot of people want to know.", "ja": ""}, {"who": "Erika", "t": "31:18", "text": "I would meet up with Yuki-san to eat and discuss the unknown Japanese culture.", "ja": ""}]}], "context": {"title": "Background points raised", "items": ["Stevo expects the weak yen to continue for a few more years, and all three agreed that tourist facing business still has room to grow.", "Travel restraint from mainland China does not affect Hong Kong or Taiwan (Erika).", "Yuki's sense is that Western customers prioritize experiences, while mainland Chinese customers prioritize shopping.", "Yuki's reasons for not incorporating are that it is a hassle, it costs money, and his income is still small. He will consider it once income grows.", "Yuki's partner works as a guide in Kanazawa, and Yuki himself is also considering the idea of her coming to Tokyo."]}, "chat": {"title": "Casual chat (recorded only)", "items": ["Talk about the biggest amount ever won at pachinko in one day.", "A story about a shop run by an actor from Kamen Rider Black RX (Stevo).", "The Chiikawa talk went endlessly deep (all three).", "A McDonald's Chiikawa item at Nakano Broadway cost 4,000 yen (Stevo).", "Stevo's favorite Pokemon is Slowpoke."]}, "unclear": {"title": "Parts that could not be heard clearly or need confirmation", "items": ["At the start (0:13), the part where Erika names an editing software. It sounds like \"PowerMirror\" but is unclear.", "At 3:48, it is unclear whether Erika said \"politics\" or \"policies.\"", "Around 22:32, the context before and after Stevo's \"Other consultants?\"", "Recording 1 (13 minutes) is nearly silent throughout, so its content could not be confirmed."]}, "transcript_link": "Transcript (original English, with speaker labels)"}, "zh": {"meta": {"title": "秋葉原會議記錄", "subtitle": "Stevo × Erika × Yuki", "date": "2026年9月23日（星期二）秋葉原", "lead": "本頁只摘錄當日對話中有機會共同進行的部分，整理成一份記錄。內容並無超出錄音範圍，聽不清楚的地方仍標示為［不明確］。", "source_note": "原始錄音共兩段。錄音一（13分鐘）疑似咪高峰被遮擋，幾乎全程無聲，因此無法轉錄文字。本頁內容只根據錄音二（32分鐘）整理而成。"}, "people": [{"name": "Stevo", "role": "YouTube頻道Movingsocks，觀眾為香港30至40多歲的男女，比例大致相約。"}, {"name": "Erika", "role": "Stevo的太太，負責頻道的剪接工作。"}, {"name": "Yuki", "role": "秋葉原動漫及遊戲愛好者的私人導遊，同時亦是日語老師。"}], "decisions": {"title": "當日決定的事項", "items": ["今日就直接拍攝2至3小時（Stevo提議，Yuki同意）。", "開場自我介紹在秋葉原站外拍攝，主題為「秋葉原隱藏景點（hidden gems）」。", "影片不會透露秘密地點，呈現方式為「想知更多就要參加旅行團」。", "日本文化解說會另外製作成一個系列，以邊食飯邊傾談的形式拍攝，與今日的影片分開處理（Erika會錄製廣東話開場評語）。", "今日稍後會前往高架橋下的遊戲Café（BEEP附近）及高達專門店。"]}, "homework": {"title": "跟進事項", "items": [{"who": "Yuki", "what": "介紹一位擔任女導遊的相熟朋友給Stevo和Erika認識（表示如有興趣可以幫忙聯繫）。"}, {"who": "Erika", "what": "告知Yuki香港女性觀眾在日本想尋找些什麼（表示可以說明觀眾的需求）。"}, {"who": "Stevo和Erika", "what": "剪接及發布今日拍攝的素材。"}, {"who": "三人", "what": "在發布前確認哪些地點會在影片中出現，哪些不會。"}]}, "ideas": [{"id": "video", "tag": "已決定", "title": "Movingsocks的秋葉原合作影片", "what": "拍攝Yuki帶Stevo和Erika遊覽秋葉原「隱藏景點」的過程，並於Movingsocks發布，今日進行拍攝。", "roles": [{"who": "Yuki", "does": "導遊，負責挑選地點及現場講解。"}, {"who": "Stevo", "does": "出鏡及主持，於車站外拍攝開場自我介紹。"}, {"who": "Erika", "does": "剪接，並負責廣東話開場評語。"}], "next": "接下來繼續拍攝，開場自我介紹在秋葉原站外進行，之後前往遊戲Café及高達專門店。", "open": ["店內拍攝許可。秋葉原不少店舖拒絕拍攝，而Yuki作為個人導遊，較難就此交涉成功（他本人表示）。", "揭露哪些地點、隱藏哪些地點（目前構思是隱藏今日會去的酒吧一類地方，但具體界線尚未確定）。"], "quotes": [{"who": "Stevo", "t": "12:16", "text": "We should do the proper introduction, maybe at the train station. Outside of Akihabara.", "ja": "我們拍一個像樣的自我介紹吧，在車站，秋葉原的外面。"}, {"who": "Yuki", "t": "17:26", "text": "You should show them, but they won't be able to find it easily themselves. If you want to know more, you can take my tour.", "ja": "會展示出來，但選擇一些自己難以找到的地方，想知道更多就要參加旅行團，以這種方式呈現。"}]}, {"id": "hk", "tag": "討論中", "title": "針對香港觀眾的旅行團呈現方式", "what": "香港旅客喜歡購物及動漫，並多以家庭形式出遊。影片會將旅行團包裝為「文化與最新遊戲話題＋不被劏客的購物＋獨特咖啡店」的組合，店舖名稱不會在影片中出現。", "roles": [{"who": "Erika", "does": "就香港觀眾的反應提供意見，並建議影片的呈現方式。"}, {"who": "Stevo", "does": "提供觀眾喜好的資訊（高達、爆旋陀螺、Sega及Neo Geo周邊商品等）。"}, {"who": "Yuki", "does": "熟悉可以用相宜價錢購物的店舖，以及照顧家庭客的安排方式（實際上曾試過只帶小朋友參觀，家長則自行購物）。"}], "next": "先觀察今日影片的反應。", "open": ["如何回應Yuki的看法：以購物為目的的亞洲客人多數會自行做資料搜集及行動，故較難購買旅行團。", "針對香港客人的價格及所需時間未有討論。"], "quotes": [{"who": "Erika", "t": "7:08", "text": "In the tours, talk about Japanese culture, what's the hottest gaming, and say that you will bring them to some really nice unique cafe and shopping areas where you can buy a good deal rather than being ripped off.", "ja": "在旅行團中會講解日本文化及目前最熱門的遊戲話題，並帶客人去獨特的咖啡店，以及不會被劏客、可以平價購物的地方。"}, {"who": "Yuki", "t": "18:09", "text": "Those who like shopping, they don't want to spend their money for a tour like mine. They can just find the place by themselves.", "ja": "喜歡購物的人自己能夠找到地方，所以不太願意花錢參加像我這樣的旅行團。"}]}, {"id": "beauty", "tag": "構思", "title": "女性向「美容日」（Erika提議）", "what": "為香港及台灣女性而設的一日團，內容包括在日本剪髮、按摩、化妝品（如SK-II）、日式化妝教學及購物，地點與秋葉原分開，並作為另一項獨立業務進行。", "roles": [{"who": "Erika", "does": "傳達女性觀眾的需求（構思提出者）。"}, {"who": "Yuki", "does": "負責聯繫日本方面的店舖及公司，並介紹相熟的女導遊。"}, {"who": "Stevo", "does": "贊成「應該做」，並會在頻道上宣傳。"}], "next": "由Yuki聯繫相熟的女導遊，Erika則具體化所需的內容。", "open": ["由誰帶團（三人有共識需要一位日本女性夥伴，並提出過由Yuki相熟的導遊擔任，或由Yuki的伴侶前往東京的方案）。", "在何處舉行（不會是秋葉原，銀座、原宿及澀谷只曾在對話中被提及為候選地點）。", "價格、所需時間及合作店舖均未定。"], "quotes": [{"who": "Erika", "t": "15:11", "text": "Bring them to shopping and also some nice haircuts, massage. They need the Japanese treatment. All of my friends will come here for a haircut. Cosmetic, SK-II. They will do makeup lessons for Japanese style.", "ja": "購物，還有剪髮、按摩，想體驗日本的美容服務。我的朋友都會為了剪髮而來，化妝品、SK-II，還有日式化妝教學。"}, {"who": "Stevo", "t": "16:06", "text": "Yeah, I think we should do this.", "ja": "嗯，我認為這件事應該做。"}]}, {"id": "culture", "tag": "已決定", "title": "談日本文化的另一個系列（邊用膳邊進行）", "what": "由Yuki一邊用膳一邊坦率講述日本人視為常識、但香港人不知道的事情的影片。今日提出的候選話題包括：柏青哥的兌現方式、驚安の殿堂與「不良少年（ヤンキー）」文化、Vellfire的形象、日本家庭之間的距離感、30歲前的婚姻觀與女性的工作方式，以及吉伊卡哇、Labubu與吉祥物受歡迎的結構。", "roles": [{"who": "Yuki", "does": "主講人。"}, {"who": "Stevo", "does": "訪問者，負責提出觀眾想知道的問題。"}, {"who": "Erika", "does": "負責廣東話開場及剪接。"}], "next": "作為今日拍攝的延續，計劃由「柏青哥的親身經歷」開始講起。", "open": ["Yuki擔心坦率發言可能會惹人反感（Stevo鼓勵他，指他只是講述不為人知的事實）。", "首先討論哪個話題尚未確定。"], "quotes": [{"who": "Stevo", "t": "11:16", "text": "I think this is a separate video talking about culture. We should talk about this because a lot of people want to know.", "ja": "把這個當作文化話題，做成另一條影片吧，有很多人想知道。"}, {"who": "Erika", "t": "31:18", "text": "I would meet up with Yuki-san to eat and discuss the unknown Japanese culture.", "ja": "我會和Yuki先生一邊用膳，一邊講述不為人知的日本文化。（廣東話開場評語的英文翻譯）"}]}], "context": {"title": "作為背景提到的內容", "items": ["Stevo認為日圓貶值還會持續數年，三人均同意面向旅客的生意仍有增長空間。", "中國大陸旅客的出行自我限制與香港、台灣無關（Erika）。", "Yuki的實際體會是，西方客人較重視體驗，中國大陸客人則較重視購物。", "Yuki未有成立公司的原因為「麻煩」、「需要成本」、「收入仍然偏低」，待收入增加後再作考慮。", "Yuki的伴侶在金澤擔任導遊，而Yuki本人亦有考慮她來東京發展的方案。"]}, "chat": {"title": "閒聊內容（僅作記錄）", "items": ["談及打柏青哥一日贏得的最高金額。", "關於幪面超人BLACK RX的演員所開的店的話題（Stevo）。", "關於吉伊卡哇的話題深不見底（三人）。", "中野百老匯內麥當勞的吉伊卡哇商品售價4,000日圓（Stevo）。", "Stevo最喜歡的寶可夢是呆呆獸。"]}, "unclear": {"title": "聽不清楚或需要確認的部分", "items": ["開首（0:13）Erika提及剪接軟件名稱的部分，聽起來像「PowerMirror」，但不太清楚。", "3:48 Erika所講的「Japanese politics」，不清楚是「politics」還是「policies」。", "22:32 Stevo所講「Other consultants?」的前後內容。", "錄音一（13分鐘）全程幾乎無聲，內容未能確認。"]}, "transcript_link": "文字紀錄（英文原文，附發言者標示）"}};
+const UI = {
+  ja:{brand:"秋葉原ミーティング 2026.09.23", ideas:"いっしょにやれそうなこと", what:"何をやるか", roles:"誰が何を", next:"次の一手", open:"決まっていないこと", quotes:"録音から", foot:"録音2（31分59秒）をもとに作成。話者は内容から推定しているため、間違いがあれば教えてください。"},
+  en:{brand:"Akihabara Meeting 2026.09.23", ideas:"Things we could do together", what:"What", roles:"Who does what", next:"Next step", open:"Still open", quotes:"From the recording", foot:"Based on recording 2 (31:59). Speakers were identified from context, so please flag any mistakes."},
+  zh:{brand:"秋葉原會議 2026.09.23", ideas:"可以一起做的事", what:"做什麼", roles:"誰負責什麼", next:"下一步", open:"尚未決定", quotes:"錄音摘錄", foot:"根據錄音2（31分59秒）整理。發言者由內容推斷，如有錯誤請告知。"}
+};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function li(items,cls){return items.map(x=>`<li>${typeof x==="string"?esc(x):`<span class="who">${esc(x.who)}</span>${esc(x.what)}`}</li>`).join("")}
+function render(lang){
+  const d=DATA[lang], u=UI[lang];
+  document.documentElement.lang=lang;
+  document.title=d.meta.title;
+  $("brand").textContent=u.brand;
+  $("date").textContent=d.meta.date; $("title").textContent=d.meta.title; $("subtitle").textContent=d.meta.subtitle;
+  $("lead").textContent=d.meta.lead; $("source_note").textContent=d.meta.source_note;
+  $("people").innerHTML=d.people.map(p=>`<div class="person"><b>${esc(p.name)}</b><span>${esc(p.role)}</span></div>`).join("");
+  $("dec_t").textContent=d.decisions.title; $("dec_l").innerHTML=li(d.decisions.items);
+  $("hw_t").textContent=d.homework.title; $("hw_l").innerHTML=li(d.homework.items);
+  $("ideas_t").textContent=u.ideas;
+  $("ideas").innerHTML=d.ideas.map(i=>`<article class="idea reveal" id="${i.id}">
+    <span class="tag" data-k="${esc(i.tag)}">${esc(i.tag)}</span>
+    <h3>${esc(i.title)}</h3>
+    <p class="what">${esc(i.what)}</p>
+    <div class="grid2">
+      <div><p class="lbl">${u.roles}</p><ul class="roles">${i.roles.map(r=>`<li><b>${esc(r.who)}</b><span>${esc(r.does)}</span></li>`).join("")}</ul></div>
+      <div><p class="lbl">${u.open}</p><ul class="open">${i.open.map(o=>`<li>${esc(o)}</li>`).join("")}</ul></div>
+    </div>
+    <div class="next"><b>${u.next}</b>${esc(i.next)}</div>
+    <div class="quotes">${i.quotes.map(q=>`<blockquote><p class="q">“${esc(q.text)}”</p>${q.ja?`<p class="tr">${esc(q.ja)}</p>`:""}<cite>${esc(q.who)} · ${esc(q.t)}</cite></blockquote>`).join("")}</div>
+  </article>`).join("");
+  $("ctx_t").textContent=d.context.title; $("ctx_l").innerHTML=li(d.context.items);
+  $("chat_t").textContent=d.chat.title; $("chat_l").innerHTML=li(d.chat.items);
+  $("unc_t").textContent=d.unclear.title; $("unc_l").innerHTML=li(d.unclear.items);
+  $("tr_link").textContent=d.transcript_link; $("foot").textContent=u.foot;
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===lang));
+  try{localStorage.setItem("lang",lang)}catch(e){}
+  history.replaceState(null,"","?lang="+lang+location.hash);
+}
+function pick(){
+  const q=new URLSearchParams(location.search).get("lang"); if(DATA[q])return q;
+  try{const s=localStorage.getItem("lang"); if(DATA[s])return s}catch(e){}
+  const n=(navigator.language||"en").toLowerCase();
+  return n.startsWith("ja")?"ja":n.startsWith("zh")?"zh":"en";
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>render(b.dataset.lang)));
+render(pick());
+</script>
+</body>
+</html>

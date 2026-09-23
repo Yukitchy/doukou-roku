@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "title": "秋葉原ミーティング記録",
+    "subtitle": "Stevo × Erika × ユウキ",
+    "date": "2026年9月23日（火）秋葉原",
+    "lead": "この日の会話のうち、いっしょにやれそうなことだけを抜き出して1枚にまとめました。録音に無いことは書いていません。聞き取れなかった箇所は［不明瞭］のまま残しています。",
+    "source_note": "元の録音は2本。録音1（13分）はマイクが塞がれていたようで全体がほぼ無音のため文字起こしできませんでした。このページは録音2（32分）だけをもとにしています。"
+  },
+  "people": [
+    {"name": "Stevo", "role": "YouTubeチャンネル Movingsocks。視聴者は香港の30〜40代、男女半々"},
+    {"name": "Erika", "role": "Stevoの奥さんで、チャンネルの編集担当"},
+    {"name": "ユウキ", "role": "秋葉原のアニメ・ゲーム好き向けプライベートツアーガイド。日本語の先生でもある"}
+  ],
+  "decisions": {
+    "title": "この日に決まったこと",
+    "items": [
+      "今日そのまま2〜3時間の撮影をする（Stevoの提案にユウキが同意）",
+      "冒頭の自己紹介は秋葉原駅の外で撮る。テーマは「秋葉原の隠れた名所（hidden gems）」",
+      "動画では秘密の場所を明かさない。「もっと知りたければツアーへ」という見せ方にする",
+      "日本文化の解説は今日の動画とは別に、食事しながら話す回として作る（Erikaが広東語で導入コメントを収録）",
+      "今日はこのあと、高架下のゲームカフェ（BEEPの近く）とガンダムの店へ行く"
+    ]
+  },
+  "homework": {
+    "title": "宿題",
+    "items": [
+      {"who": "ユウキ", "what": "女性ガイドをしている知り合いを、StevoとErikaに紹介する（「興味があればつなぐ」と申し出）"},
+      {"who": "Erika", "what": "香港の女性視聴者が日本で何を求めているかをユウキに伝える（「何を探しているか教えられる」と申し出）"},
+      {"who": "Stevo・Erika", "what": "今日撮った素材を編集して公開する"},
+      {"who": "3人", "what": "動画に出す場所と出さない場所を、公開前にすり合わせる"}
+    ]
+  },
+  "ideas": [
+    {
+      "id": "video",
+      "tag": "決定",
+      "title": "Movingsocksでの秋葉原コラボ動画",
+      "what": "ユウキがStevoとErikaを秋葉原の「隠れた名所」へ案内する様子を撮り、Movingsocksで公開する。今日撮影する。",
+      "roles": [
+        {"who": "ユウキ", "does": "案内役。行き先の選定と現地での解説"},
+        {"who": "Stevo", "does": "出演と進行。冒頭の自己紹介を駅の外で撮る"},
+        {"who": "Erika", "does": "編集。広東語の導入コメント"}
+      ],
+      "next": "このあと撮影。冒頭は秋葉原駅の外で自己紹介、その後ゲームカフェとガンダムの店へ。",
+      "open": [
+        "店内の撮影許可。秋葉原の店は撮影を断るところが多く、個人ガイドのユウキでは交渉が通りにくい（本人談）",
+        "どの場所を明かし、どこを伏せるか（今日行く飲み屋のような場所は伏せる方針だが、線引きは未確認）"
+      ],
+      "quotes": [
+        {"who": "Stevo", "t": "12:16", "text": "We should do the proper introduction, maybe at the train station. Outside of Akihabara.", "ja": "ちゃんとした自己紹介を撮ろう。駅で、秋葉原の外で。"},
+        {"who": "ユウキ", "t": "17:26", "text": "You should show them, but they won't be able to find it easily themselves. If you want to know more, you can take my tour.", "ja": "見せるけど、自力では見つけにくい場所にする。もっと知りたければツアーへ、という形。"}
+      ]
+    },
+    {
+      "id": "hk",
+      "tag": "検討中",
+      "title": "香港の視聴者に合わせたツアーの見せ方",
+      "what": "香港の人は買い物とアニメが好きで、家族連れが多い。ツアーを「文化と最新のゲーム事情の話＋ぼったくられない買い物＋ユニークなカフェ」として動画で見せる。店名は動画では出さない。",
+      "roles": [
+        {"who": "Erika", "does": "香港の視聴者が何に反応するかの助言。動画での見せ方の提案"},
+        {"who": "Stevo", "does": "視聴者の好み（ガンダム、ベイブレード、Sega・Neo Geoのグッズなど）の情報"},
+        {"who": "ユウキ", "does": "安く買える店、家族向けの回し方（子どもだけ案内して親は買い物、というケースが実際にある）"}
+      ],
+      "next": "まず今日の動画で反応を見る。",
+      "open": [
+        "買い物目的のアジア系のお客さんは自分で調べて回るのでツアーを買いにくい、というユウキの見立てにどう答えるか",
+        "香港向けの価格や所要時間は話に出ていない"
+      ],
+      "quotes": [
+        {"who": "Erika", "t": "7:08", "text": "In the tours, talk about Japanese culture, what's the hottest gaming, and say that you will bring them to some really nice unique cafe and shopping areas where you can buy a good deal rather than being ripped off.", "ja": "ツアーでは日本文化や今いちばん熱いゲームの話をして、ユニークなカフェと、ぼったくられずに安く買える場所へ連れて行く、と伝える。"},
+        {"who": "ユウキ", "t": "18:09", "text": "Those who like shopping, they don't want to spend their money for a tour like mine. They can just find the place by themselves.", "ja": "買い物好きの人は自分で場所を見つけられるので、僕のようなツアーにはお金を使いたがらない。"}
+      ]
+    },
+    {
+      "id": "beauty",
+      "tag": "アイデア",
+      "title": "女性向け「ビューティーデー」（Erikaの提案）",
+      "what": "香港・台湾の女性向けに、日本でのヘアカット、マッサージ、コスメ（SK-IIなど）、日本風メイクのレッスン、買い物を1日にまとめたツアー。秋葉原とは別の場所で、別の事業として。",
+      "roles": [
+        {"who": "Erika", "does": "女性視聴者が求めているものを伝える（発案者）"},
+        {"who": "ユウキ", "does": "日本側の店や会社とのつなぎ。女性ガイドの知り合いを紹介"},
+        {"who": "Stevo", "does": "「やるべき」と賛成。チャンネルでの発信"}
+      ],
+      "next": "ユウキが女性ガイドの知り合いをつなぐ。Erikaが求められている内容を具体化する。",
+      "open": [
+        "誰がガイドするか（女性の日本人パートナーが必要、というのが共通認識。ユウキの知り合いのガイドか、ユウキのパートナーが東京に来る案も出た）",
+        "どこでやるか（秋葉原ではない。銀座、原宿、渋谷が候補として会話に出ただけ）",
+        "価格、所要時間、提携する店はすべて未定"
+      ],
+      "quotes": [
+        {"who": "Erika", "t": "15:11", "text": "Bring them to shopping and also some nice haircuts, massage. They need the Japanese treatment. All of my friends will come here for a haircut. Cosmetic, SK-II. They will do makeup lessons for Japanese style.", "ja": "買い物と、ヘアカットやマッサージ。日本の施術が欲しいの。私の友達はみんなヘアカットのために来る。コスメ、SK-II。日本風のメイクのレッスンも。"},
+        {"who": "Stevo", "t": "16:06", "text": "Yeah, I think we should do this.", "ja": "うん、これはやるべきだと思う。"}
+      ]
+    },
+    {
+      "id": "culture",
+      "tag": "決定",
+      "title": "日本文化を話す別シリーズ（食事しながら）",
+      "what": "日本人には常識でも香港の人は知らないことを、ユウキが食事しながら率直に話す動画。今日の話題の中では、パチンコの換金の仕組み、ドン・キホーテと「ヤンキー」文化、ヴェルファイアのイメージ、日本の家族の距離感、30歳前の結婚観と女性の働き方、ちいかわとLabubuとゆるキャラの人気の構造、が候補として出た。",
+      "roles": [
+        {"who": "ユウキ", "does": "話し手"},
+        {"who": "Stevo", "does": "聞き手。視聴者が知りたい質問を出す"},
+        {"who": "Erika", "does": "広東語での導入と編集"}
+      ],
+      "next": "今日の撮影の続きで「パチンコの体験談」から話す流れになった。",
+      "open": [
+        "率直に話すと嫌われるかもしれない、というユウキの懸念（Stevoは「知られていない事実を話しているだけ」と後押し）",
+        "どの話題を先に出すかは未定"
+      ],
+      "quotes": [
+        {"who": "Stevo", "t": "11:16", "text": "I think this is a separate video talking about culture. We should talk about this because a lot of people want to know.", "ja": "これは文化の話として別の動画にしよう。知りたい人がたくさんいる。"},
+        {"who": "Erika", "t": "31:18", "text": "I would meet up with Yuki-san to eat and discuss the unknown Japanese culture.", "ja": "ユウキさんと食事しながら、知られていない日本文化の話をしていきます。（広東語の導入コメントの英訳）"}
+      ]
+    }
+  ],
+  "context": {
+    "title": "背景として出た話",
+    "items": [
+      "円安はあと数年続くとStevoは見ていて、観光客相手の仕事はまだ伸びる、という点で3人とも一致",
+      "中国本土の渡航自粛は香港・台湾には関係ない（Erika）",
+      "白人のお客さんは体験重視、中国本土のお客さんは買い物重視、というユウキの実感",
+      "ユウキが会社にしていない理由は「めんどくさい」「費用がかかる」「まだ収入が小さい」。収入が増えたら考える",
+      "ユウキのパートナーは金沢でガイドをしていて、東京に来る案はユウキ自身も考えている"
+    ]
+  },
+  "chat": {
+    "title": "雑談だった話（記録だけ）",
+    "items": [
+      "パチンコで1日に勝った最高額の話",
+      "仮面ライダーBLACK RXの俳優の店の話（Stevo）",
+      "ちいかわの話がどこまでも深い（3人とも）",
+      "中野ブロードウェイでマクドナルドのちいかわが4,000円だった（Stevo）",
+      "Stevoのいちばん好きなポケモンはヤドン"
+    ]
+  },
+  "unclear": {
+    "title": "聞き取れなかった・確認したい箇所",
+    "items": [
+      "冒頭（0:13）Erikaが編集ソフトの名前を挙げた部分。「PowerMirror」と聞こえるが不明瞭",
+      "3:48 Erikaの「Japanese politics」は「politics」か「policies」か不明瞭",
+      "22:32 Stevoの「Other consultants?」の前後",
+      "録音1（13分）は全体が無音に近く、内容を確認できていない"
+    ]
+  },
+  "transcript_link": "文字起こし（英語原文・話者付き）"
+}

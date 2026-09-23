@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "title": "秋葉原會議記錄",
+    "subtitle": "Stevo × Erika × Yuki",
+    "date": "2026年9月23日（星期二）秋葉原",
+    "lead": "本頁只摘錄當日對話中有機會共同進行的部分，整理成一份記錄。內容並無超出錄音範圍，聽不清楚的地方仍標示為［不明確］。",
+    "source_note": "原始錄音共兩段。錄音一（13分鐘）疑似咪高峰被遮擋，幾乎全程無聲，因此無法轉錄文字。本頁內容只根據錄音二（32分鐘）整理而成。"
+  },
+  "people": [
+    {
+      "name": "Stevo",
+      "role": "YouTube頻道Movingsocks，觀眾為香港30至40多歲的男女，比例大致相約。"
+    },
+    {
+      "name": "Erika",
+      "role": "Stevo的太太，負責頻道的剪接工作。"
+    },
+    {
+      "name": "Yuki",
+      "role": "秋葉原動漫及遊戲愛好者的私人導遊，同時亦是日語老師。"
+    }
+  ],
+  "decisions": {
+    "title": "當日決定的事項",
+    "items": [
+      "今日就直接拍攝2至3小時（Stevo提議，Yuki同意）。",
+      "開場自我介紹在秋葉原站外拍攝，主題為「秋葉原隱藏景點（hidden gems）」。",
+      "影片不會透露秘密地點，呈現方式為「想知更多就要參加旅行團」。",
+      "日本文化解說會另外製作成一個系列，以邊食飯邊傾談的形式拍攝，與今日的影片分開處理（Erika會錄製廣東話開場評語）。",
+      "今日稍後會前往高架橋下的遊戲Café（BEEP附近）及高達專門店。"
+    ]
+  },
+  "homework": {
+    "title": "跟進事項",
+    "items": [
+      {
+        "who": "Yuki",
+        "what": "介紹一位擔任女導遊的相熟朋友給Stevo和Erika認識（表示如有興趣可以幫忙聯繫）。"
+      },
+      {
+        "who": "Erika",
+        "what": "告知Yuki香港女性觀眾在日本想尋找些什麼（表示可以說明觀眾的需求）。"
+      },
+      {
+        "who": "Stevo和Erika",
+        "what": "剪接及發布今日拍攝的素材。"
+      },
+      {
+        "who": "三人",
+        "what": "在發布前確認哪些地點會在影片中出現，哪些不會。"
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "video",
+      "tag": "已決定",
+      "title": "Movingsocks的秋葉原合作影片",
+      "what": "拍攝Yuki帶Stevo和Erika遊覽秋葉原「隱藏景點」的過程，並於Movingsocks發布，今日進行拍攝。",
+      "roles": [
+        {
+          "who": "Yuki",
+          "does": "導遊，負責挑選地點及現場講解。"
+        },
+        {
+          "who": "Stevo",
+          "does": "出鏡及主持，於車站外拍攝開場自我介紹。"
+        },
+        {
+          "who": "Erika",
+          "does": "剪接，並負責廣東話開場評語。"
+        }
+      ],
+      "next": "接下來繼續拍攝，開場自我介紹在秋葉原站外進行，之後前往遊戲Café及高達專門店。",
+      "open": [
+        "店內拍攝許可。秋葉原不少店舖拒絕拍攝，而Yuki作為個人導遊，較難就此交涉成功（他本人表示）。",
+        "揭露哪些地點、隱藏哪些地點（目前構思是隱藏今日會去的酒吧一類地方，但具體界線尚未確定）。"
+      ],
+      "quotes": [
+        {
+          "who": "Stevo",
+          "t": "12:16",
+          "text": "We should do the proper introduction, maybe at the train station. Outside of Akihabara.",
+          "ja": "我們拍一個像樣的自我介紹吧，在車站，秋葉原的外面。"
+        },
+        {
+          "who": "Yuki",
+          "t": "17:26",
+          "text": "You should show them, but they won't be able to find it easily themselves. If you want to know more, you can take my tour.",
+          "ja": "會展示出來，但選擇一些自己難以找到的地方，想知道更多就要參加旅行團，以這種方式呈現。"
+        }
+      ]
+    },
+    {
+      "id": "hk",
+      "tag": "討論中",
+      "title": "針對香港觀眾的旅行團呈現方式",
+      "what": "香港旅客喜歡購物及動漫，並多以家庭形式出遊。影片會將旅行團包裝為「文化與最新遊戲話題＋不被劏客的購物＋獨特咖啡店」的組合，店舖名稱不會在影片中出現。",
+      "roles": [
+        {
+          "who": "Erika",
+          "does": "就香港觀眾的反應提供意見，並建議影片的呈現方式。"
+        },
+        {
+          "who": "Stevo",
+          "does": "提供觀眾喜好的資訊（高達、爆旋陀螺、Sega及Neo Geo周邊商品等）。"
+        },
+        {
+          "who": "Yuki",
+          "does": "熟悉可以用相宜價錢購物的店舖，以及照顧家庭客的安排方式（實際上曾試過只帶小朋友參觀，家長則自行購物）。"
+        }
+      ],
+      "next": "先觀察今日影片的反應。",
+      "open": [
+        "如何回應Yuki的看法：以購物為目的的亞洲客人多數會自行做資料搜集及行動，故較難購買旅行團。",
+        "針對香港客人的價格及所需時間未有討論。"
+      ],
+      "quotes": [
+        {
+          "who": "Erika",
+          "t": "7:08",
+          "text": "In the tours, talk about Japanese culture, what's the hottest gaming, and say that you will bring them to some really nice unique cafe and shopping areas where you can buy a good deal rather than being ripped off.",
+          "ja": "在旅行團中會講解日本文化及目前最熱門的遊戲話題，並帶客人去獨特的咖啡店，以及不會被劏客、可以平價購物的地方。"
+        },
+        {
+          "who": "Yuki",
+          "t": "18:09",
+          "text": "Those who like shopping, they don't want to spend their money for a tour like mine. They can just find the place by themselves.",
+          "ja": "喜歡購物的人自己能夠找到地方，所以不太願意花錢參加像我這樣的旅行團。"
+        }
+      ]
+    },
+    {
+      "id": "beauty",
+      "tag": "構思",
+      "title": "女性向「美容日」（Erika提議）",
+      "what": "為香港及台灣女性而設的一日團，內容包括在日本剪髮、按摩、化妝品（如SK-II）、日式化妝教學及購物，地點與秋葉原分開，並作為另一項獨立業務進行。",
+      "roles": [
+        {
+          "who": "Erika",
+          "does": "傳達女性觀眾的需求（構思提出者）。"
+        },
+        {
+          "who": "Yuki",
+          "does": "負責聯繫日本方面的店舖及公司，並介紹相熟的女導遊。"
+        },
+        {
+          "who": "Stevo",
+          "does": "贊成「應該做」，並會在頻道上宣傳。"
+        }
+      ],
+      "next": "由Yuki聯繫相熟的女導遊，Erika則具體化所需的內容。",
+      "open": [
+        "由誰帶團（三人有共識需要一位日本女性夥伴，並提出過由Yuki相熟的導遊擔任，或由Yuki的伴侶前往東京的方案）。",
+        "在何處舉行（不會是秋葉原，銀座、原宿及澀谷只曾在對話中被提及為候選地點）。",
+        "價格、所需時間及合作店舖均未定。"
+      ],
+      "quotes": [
+        {
+          "who": "Erika",
+          "t": "15:11",
+          "text": "Bring them to shopping and also some nice haircuts, massage. They need the Japanese treatment. All of my friends will come here for a haircut. Cosmetic, SK-II. They will do makeup lessons for Japanese style.",
+          "ja": "購物，還有剪髮、按摩，想體驗日本的美容服務。我的朋友都會為了剪髮而來，化妝品、SK-II，還有日式化妝教學。"
+        },
+        {
+          "who": "Stevo",
+          "t": "16:06",
+          "text": "Yeah, I think we should do this.",
+          "ja": "嗯，我認為這件事應該做。"
+        }
+      ]
+    },
+    {
+      "id": "culture",
+      "tag": "已決定",
+      "title": "談日本文化的另一個系列（邊用膳邊進行）",
+      "what": "由Yuki一邊用膳一邊坦率講述日本人視為常識、但香港人不知道的事情的影片。今日提出的候選話題包括：柏青哥的兌現方式、驚安の殿堂與「不良少年（ヤンキー）」文化、Vellfire的形象、日本家庭之間的距離感、30歲前的婚姻觀與女性的工作方式，以及吉伊卡哇、Labubu與吉祥物受歡迎的結構。",
+      "roles": [
+        {
+          "who": "Yuki",
+          "does": "主講人。"
+        },
+        {
+          "who": "Stevo",
+          "does": "訪問者，負責提出觀眾想知道的問題。"
+        },
+        {
+          "who": "Erika",
+          "does": "負責廣東話開場及剪接。"
+        }
+      ],
+      "next": "作為今日拍攝的延續，計劃由「柏青哥的親身經歷」開始講起。",
+      "open": [
+        "Yuki擔心坦率發言可能會惹人反感（Stevo鼓勵他，指他只是講述不為人知的事實）。",
+        "首先討論哪個話題尚未確定。"
+      ],
+      "quotes": [
+        {
+          "who": "Stevo",
+          "t": "11:16",
+          "text": "I think this is a separate video talking about culture. We should talk about this because a lot of people want to know.",
+          "ja": "把這個當作文化話題，做成另一條影片吧，有很多人想知道。"
+        },
+        {
+          "who": "Erika",
+          "t": "31:18",
+          "text": "I would meet up with Yuki-san to eat and discuss the unknown Japanese culture.",
+          "ja": "我會和Yuki先生一邊用膳，一邊講述不為人知的日本文化。（廣東話開場評語的英文翻譯）"
+        }
+      ]
+    }
+  ],
+  "context": {
+    "title": "作為背景提到的內容",
+    "items": [
+      "Stevo認為日圓貶值還會持續數年，三人均同意面向旅客的生意仍有增長空間。",
+      "中國大陸旅客的出行自我限制與香港、台灣無關（Erika）。",
+      "Yuki的實際體會是，西方客人較重視體驗，中國大陸客人則較重視購物。",
+      "Yuki未有成立公司的原因為「麻煩」、「需要成本」、「收入仍然偏低」，待收入增加後再作考慮。",
+      "Yuki的伴侶在金澤擔任導遊，而Yuki本人亦有考慮她來東京發展的方案。"
+    ]
+  },
+  "chat": {
+    "title": "閒聊內容（僅作記錄）",
+    "items": [
+      "談及打柏青哥一日贏得的最高金額。",
+      "關於幪面超人BLACK RX的演員所開的店的話題（Stevo）。",
+      "關於吉伊卡哇的話題深不見底（三人）。",
+      "中野百老匯內麥當勞的吉伊卡哇商品售價4,000日圓（Stevo）。",
+      "Stevo最喜歡的寶可夢是呆呆獸。"
+    ]
+  },
+  "unclear": {
+    "title": "聽不清楚或需要確認的部分",
+    "items": [
+      "開首（0:13）Erika提及剪接軟件名稱的部分，聽起來像「PowerMirror」，但不太清楚。",
+      "3:48 Erika所講的「Japanese politics」，不清楚是「politics」還是「policies」。",
+      "22:32 Stevo所講「Other consultants?」的前後內容。",
+      "錄音一（13分鐘）全程幾乎無聲，內容未能確認。"
+    ]
+  },
+  "transcript_link": "文字紀錄（英文原文，附發言者標示）"
+}

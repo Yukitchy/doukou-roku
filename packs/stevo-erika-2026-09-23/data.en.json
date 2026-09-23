@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "title": "Akihabara Meeting Notes",
+    "subtitle": "Stevo x Erika x Yuki",
+    "date": "September 23, 2026 (Tuesday), Akihabara",
+    "lead": "This page pulls out only the parts of that day's conversation that could turn into joint work. Nothing here goes beyond what is in the recording. Parts that could not be heard clearly are marked [unclear].",
+    "source_note": "There were two original recordings. Recording 1 (13 minutes) appears to have had the microphone blocked and is almost entirely silent, so it could not be transcribed. This page is based only on Recording 2 (32 minutes)."
+  },
+  "people": [
+    {
+      "name": "Stevo",
+      "role": "YouTube channel Movingsocks. Viewers are mostly Hong Kong men and women in their 30s and 40s."
+    },
+    {
+      "name": "Erika",
+      "role": "Stevo's wife. Handles editing for the channel."
+    },
+    {
+      "name": "Yuki",
+      "role": "Private tour guide in Akihabara for anime and game fans. Also a Japanese teacher."
+    }
+  ],
+  "decisions": {
+    "title": "Decisions made that day",
+    "items": [
+      "Film for 2 to 3 hours today as is (Stevo proposed this and Yuki agreed).",
+      "Film the opening self introduction outside Akihabara Station. The theme is \"hidden gems of Akihabara.\"",
+      "The video will not reveal the secret spots. The framing will be, if you want to know more, take the tour.",
+      "Explanations of Japanese culture will be made as a separate series, filmed over meals, apart from today's video. (Erika will record a Cantonese introduction comment.)",
+      "After this, today's plan is to go to a game cafe under the railway tracks (near BEEP) and a Gundam shop."
+    ]
+  },
+  "homework": {
+    "title": "Action items",
+    "items": [
+      {
+        "who": "Yuki",
+        "what": "Introduce an acquaintance who works as a female guide to Stevo and Erika (offered to connect them if they are interested)."
+      },
+      {
+        "who": "Erika",
+        "what": "Tell Yuki what female viewers in Hong Kong are looking for in Japan (offered to share what they are looking for)."
+      },
+      {
+        "who": "Stevo and Erika",
+        "what": "Edit and publish the footage filmed today."
+      },
+      {
+        "who": "All three",
+        "what": "Agree on which locations will and will not appear in the video before it is published."
+      }
+    ]
+  },
+  "ideas": [
+    {
+      "id": "video",
+      "tag": "Decided",
+      "title": "Akihabara collab video for Movingsocks",
+      "what": "Film Yuki guiding Stevo and Erika to Akihabara's \"hidden gems\" and publish it on Movingsocks. Filming happens today.",
+      "roles": [
+        {
+          "who": "Yuki",
+          "does": "Guide. Chooses the locations and explains them on site."
+        },
+        {
+          "who": "Stevo",
+          "does": "On camera and hosting. Films the opening self introduction outside the station."
+        },
+        {
+          "who": "Erika",
+          "does": "Editing. Cantonese introduction comment."
+        }
+      ],
+      "next": "Filming continues after this. The opening self introduction is outside Akihabara Station, then on to the game cafe and the Gundam shop.",
+      "open": [
+        "Permission to film inside shops. Many shops in Akihabara refuse filming, and as an individual guide Yuki finds it hard to negotiate this (his own comment).",
+        "Which locations to reveal and which to keep hidden. The plan is to keep places like the bar they are visiting today hidden, but the exact line has not been confirmed."
+      ],
+      "quotes": [
+        {
+          "who": "Stevo",
+          "t": "12:16",
+          "text": "We should do the proper introduction, maybe at the train station. Outside of Akihabara.",
+          "ja": ""
+        },
+        {
+          "who": "Yuki",
+          "t": "17:26",
+          "text": "You should show them, but they won't be able to find it easily themselves. If you want to know more, you can take my tour.",
+          "ja": ""
+        }
+      ]
+    },
+    {
+      "id": "hk",
+      "tag": "Under discussion",
+      "title": "How to present tours for Hong Kong viewers",
+      "what": "Hong Kong visitors like shopping and anime, and many travel with family. The video will present the tour as culture and the latest gaming trends, plus shopping without getting ripped off, plus unique cafes. Shop names will not appear in the video.",
+      "roles": [
+        {
+          "who": "Erika",
+          "does": "Advises on what Hong Kong viewers respond to. Suggests how to present it in the video."
+        },
+        {
+          "who": "Stevo",
+          "does": "Provides information on viewer preferences (Gundam, Beyblade, Sega and Neo Geo merchandise, etc.)."
+        },
+        {
+          "who": "Yuki",
+          "does": "Knows shops with good prices, and how to run things for families (there are actual cases where only the children are guided while the parents shop)."
+        }
+      ],
+      "next": "First see how viewers react to today's video.",
+      "open": [
+        "How to respond to Yuki's view that Asian customers who come mainly to shop tend to research and get around on their own, making them unlikely to buy a tour.",
+        "Pricing and duration aimed at Hong Kong visitors were not discussed."
+      ],
+      "quotes": [
+        {
+          "who": "Erika",
+          "t": "7:08",
+          "text": "In the tours, talk about Japanese culture, what's the hottest gaming, and say that you will bring them to some really nice unique cafe and shopping areas where you can buy a good deal rather than being ripped off.",
+          "ja": ""
+        },
+        {
+          "who": "Yuki",
+          "t": "18:09",
+          "text": "Those who like shopping, they don't want to spend their money for a tour like mine. They can just find the place by themselves.",
+          "ja": ""
+        }
+      ]
+    },
+    {
+      "id": "beauty",
+      "tag": "Idea",
+      "title": "A \"beauty day\" for women (Erika's suggestion)",
+      "what": "A one day tour for women from Hong Kong and Taiwan combining a haircut in Japan, massage, cosmetics such as SK-II, a Japanese style makeup lesson, and shopping. This would be run as a separate business, in a different location from Akihabara.",
+      "roles": [
+        {
+          "who": "Erika",
+          "does": "Communicates what female viewers want (originated the idea)."
+        },
+        {
+          "who": "Yuki",
+          "does": "Connects with shops and companies on the Japan side. Introduces an acquaintance who is a female guide."
+        },
+        {
+          "who": "Stevo",
+          "does": "Agrees this should be done. Will promote it on the channel."
+        }
+      ],
+      "next": "Yuki will connect the female guide acquaintance. Erika will work out the details of what is needed.",
+      "open": [
+        "Who will guide (there is agreement that a Japanese female partner is needed. Options raised include Yuki's guide acquaintance, or Yuki's own partner coming to Tokyo).",
+        "Where to hold it (not Akihabara. Ginza, Harajuku and Shibuya were mentioned only as possibilities in conversation).",
+        "Price, duration, and partner shops are all undecided."
+      ],
+      "quotes": [
+        {
+          "who": "Erika",
+          "t": "15:11",
+          "text": "Bring them to shopping and also some nice haircuts, massage. They need the Japanese treatment. All of my friends will come here for a haircut. Cosmetic, SK-II. They will do makeup lessons for Japanese style.",
+          "ja": ""
+        },
+        {
+          "who": "Stevo",
+          "t": "16:06",
+          "text": "Yeah, I think we should do this.",
+          "ja": ""
+        }
+      ]
+    },
+    {
+      "id": "culture",
+      "tag": "Decided",
+      "title": "A separate series about Japanese culture (over meals)",
+      "what": "A video where Yuki speaks candidly over a meal about things that are common knowledge to Japanese people but unknown to people in Hong Kong. Topics raised today as candidates include how pachinko cash out works, Don Quijote and \"yankii\" culture, the image of the Vellfire, the sense of distance in Japanese families, views on marriage before age 30 and how women work, and the structure behind the popularity of Chiikawa, Labubu, and yuru-chara.",
+      "roles": [
+        {
+          "who": "Yuki",
+          "does": "Speaker."
+        },
+        {
+          "who": "Stevo",
+          "does": "Interviewer. Asks the questions viewers want answered."
+        },
+        {
+          "who": "Erika",
+          "does": "Cantonese introduction and editing."
+        }
+      ],
+      "next": "As a continuation of today's filming, the plan is to start with pachinko personal stories.",
+      "open": [
+        "Yuki's concern that speaking candidly might make him unpopular (Stevo encouraged him, saying he is only sharing facts that are not widely known).",
+        "Which topic to lead with is undecided."
+      ],
+      "quotes": [
+        {
+          "who": "Stevo",
+          "t": "11:16",
+          "text": "I think this is a separate video talking about culture. We should talk about this because a lot of people want to know.",
+          "ja": ""
+        },
+        {
+          "who": "Erika",
+          "t": "31:18",
+          "text": "I would meet up with Yuki-san to eat and discuss the unknown Japanese culture.",
+          "ja": ""
+        }
+      ]
+    }
+  ],
+  "context": {
+    "title": "Background points raised",
+    "items": [
+      "Stevo expects the weak yen to continue for a few more years, and all three agreed that tourist facing business still has room to grow.",
+      "Travel restraint from mainland China does not affect Hong Kong or Taiwan (Erika).",
+      "Yuki's sense is that Western customers prioritize experiences, while mainland Chinese customers prioritize shopping.",
+      "Yuki's reasons for not incorporating are that it is a hassle, it costs money, and his income is still small. He will consider it once income grows.",
+      "Yuki's partner works as a guide in Kanazawa, and Yuki himself is also considering the idea of her coming to Tokyo."
+    ]
+  },
+  "chat": {
+    "title": "Casual chat (recorded only)",
+    "items": [
+      "Talk about the biggest amount ever won at pachinko in one day.",
+      "A story about a shop run by an actor from Kamen Rider Black RX (Stevo).",
+      "The Chiikawa talk went endlessly deep (all three).",
+      "A McDonald's Chiikawa item at Nakano Broadway cost 4,000 yen (Stevo).",
+      "Stevo's favorite Pokemon is Slowpoke."
+    ]
+  },
+  "unclear": {
+    "title": "Parts that could not be heard clearly or need confirmation",
+    "items": [
+      "At the start (0:13), the part where Erika names an editing software. It sounds like \"PowerMirror\" but is unclear.",
+      "At 3:48, it is unclear whether Erika said \"politics\" or \"policies.\"",
+      "Around 22:32, the context before and after Stevo's \"Other consultants?\"",
+      "Recording 1 (13 minutes) is nearly silent throughout, so its content could not be confirmed."
+    ]
+  },
+  "transcript_link": "Transcript (original English, with speaker labels)"
+}
