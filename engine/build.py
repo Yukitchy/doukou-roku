@@ -43,7 +43,12 @@ for p in parts:
         f"<audio controls preload='none' src='audio/{E(a['file'])}'></audio></div>"
         for a in p["audio"])
 
-    blocks = [sec_block(f"音声 {len(p['audio'])}本", f"<div class='tracks'>{tracks}</div>")]
+    blocks = []
+    if p.get("photos"):
+        ph = "".join(f"<figure><img loading='lazy' src='{E(x['file'])}' alt='{E(x.get('caption',''))}'>"
+                     f"<figcaption>{E(x.get('caption',''))}</figcaption></figure>" for x in p["photos"])
+        blocks.append(f"<div class='photos'>{ph}</div>")
+    blocks.append(sec_block(f"音声 {len(p['audio'])}本", f"<div class='tracks'>{tracks}</div>"))
 
     if m.get("summary"):
         topics = "".join(f"<li>{inline(t)}</li>" for t in m.get("topics", []))
@@ -115,8 +120,39 @@ for k, v in {"TITLE": meta["title"], "BRAND": meta.get("brand", meta["title"]),
              "H1": meta.get("h1", meta["title"]), "LEAD": meta.get("lead", ""),
              "NOTE": meta.get("note", "")}.items():
     page = page.replace("{{" + k + "}}", E(v).replace("\n", "<br>") if k == "H1" else E(v))
+# 「次の回の種」: pack.json の seeds[] を最後に1枚のボードとして出す（無ければ空）
+seeds = ""
+if not meta.get("seeds"):  # auto-collect seeds from parts
+    meta["seeds"] = [dict(sd, part=q["id"]) for q in parts for sd in q.get("seeds", [])]
+if meta.get("seeds"):
+    cards = ""
+    for i, sd in enumerate(meta["seeds"]):
+        part = next((q for q in parts if q["id"] == sd.get("part")), None)
+        play = ts(part, sd["file"], sd["t"], mmss(sd["t"]) + " から聴く") if part and sd.get("file") else ""
+        cards += (f"<li class='seed'><div class='sno'>{i+1:02d}</div><div>"
+                  f"<h4>{E(sd['title'])}</h4><p class='sq'>{inline(sd.get('quote',''))}"
+                  f"<span class='swho'>— {E(sd.get('who',''))}</span> {play}</p>"
+                  f"<p class='swhy'>{inline(sd.get('why',''))}</p>"
+                  + (f"<p class='snext'><b>次の一手</b> {inline(sd['next'])}</p>" if sd.get('next') else '')
+                  + "</div></li>")
+    seeds = (f"<div class='part seeds' id='seeds'><header><div class='ptime'>{E(meta.get('seeds_eyebrow',''))}</div>"
+             f"<h2>{E(meta.get('seeds_title','ここから生まれる次の回'))}</h2>"
+             f"<p class='blurb'>{inline(meta.get('seeds_lead',''))}</p></header><ol class='seedlist'>{cards}</ol></div>")
+    nav.append("<a href='#seeds'>次の回の種<small></small></a>")
+resources = ""
+if meta.get("resources"):
+    cards = "".join(
+        f"<a class='res' href='{E(r['url'])}' target='_blank' rel='noopener'>"
+        + (f"<img loading='lazy' src='{E(r['image'])}' alt=''>" if r.get("image") else "<div class='noimg'></div>")
+        + f"<div><b>{E(r['label'])}</b><span>{E(r.get('note',''))}</span></div></a>" for r in meta["resources"])
+    resources = (f"<div class='part' id='resources'><header><div class='ptime'>話に出た場所・団体・出来事</div>"
+                 f"<h2>{E(meta.get('resources_title','関連リンク'))}</h2>"
+                 f"<p class='blurb'>{inline(meta.get('resources_lead',''))}</p></header><div class='resgrid'>{cards}</div></div>")
+    nav.append("<a href='#resources'>関連リンク<small></small></a>")
 page = page.replace("{{NAV}}", "".join(nav))
 sticky = "".join(f"<a href='#{p['id']}'>{E(p['title'])}</a>" for p in parts)
-page = page.replace("{{STICKY}}", sticky).replace("{{BODY}}", "".join(body))
+hero = meta.get("hero")
+page = page.replace("{{HERO}}", f"<figure class='hero'><img src='{E(hero['file'])}' alt='{E(hero.get('caption',''))}'><figcaption>{E(hero.get('caption',''))}</figcaption></figure>" if hero else "")
+page = page.replace("{{STICKY}}", sticky).replace("{{BODY}}", "".join(body) + seeds + resources)
 (pack / "index.html").write_text(page)
 print("wrote", pack / "index.html")

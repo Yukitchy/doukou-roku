@@ -136,6 +136,26 @@ details.prompt>pre{margin:0 26px 26px}
  details.ch>summary{padding-left:28px}details.ch .lines{padding-left:0}
  details.prompt>summary{padding:18px}details.prompt>pre{margin:0 18px 18px}
 }
+.seedlist{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.seed{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.seed .sno{font-weight:900;font-size:22px;color:var(--acc);line-height:1}
+.seed h4{margin:0 0 6px;font-size:17px}
+.seed .sq{margin:0 0 6px;font-size:14px;color:var(--ink)}
+.seed .swho{color:var(--mute);margin-left:4px}
+.seed .swhy{margin:0 0 6px;font-size:14px;color:var(--mute)}
+.seed .snext{margin:0;font-size:14px;background:var(--onacc);display:inline-block;padding:4px 10px;border-radius:8px}
+.seeds header h2{color:var(--acc)}
+.seed .svote{margin:10px 0 0;display:flex;align-items:center;gap:10px}
+.seed .vhint{font-size:12px;color:var(--ash)}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:0 0 22px}
+.photos figure{margin:0}.photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block;background:var(--line)}
+.photos figcaption{font-size:12px;color:var(--ash);margin-top:4px}
+figure.hero{margin:22px 0 8px}figure.hero img{width:100%;max-height:520px;object-fit:cover;border-radius:18px;display:block}
+figure.hero figcaption{font-size:12px;color:var(--ash);margin-top:6px}
+.resgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.res{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;color:var(--ink);text-decoration:none}
+.res img,.res .noimg{width:96px;height:72px;object-fit:cover;border-radius:8px;background:var(--line)}
+.res b{display:block;font-size:14px;line-height:1.35}.res span{display:block;font-size:12px;color:var(--mute);margin-top:3px}
 </style></head><body><div class="wrap">
 <nav class="sticky" id="sticky"><div class="swrap"><b>同行録</b>{{STICKY}}<a href="#top" class="totop">先頭</a></div></nav>
 <header class="top" id="top"><div class="brand">{{BRAND}}</div><div class="pill">{{DATE}}</div></header>
@@ -143,6 +163,7 @@ details.prompt>pre{margin:0 26px 26px}
  <div class="eyebrow">{{EYEBROW}}</div>
  <h1>{{H1}}</h1>
  <p class="lead">{{LEAD}}</p>
+{{HERO}}
  <nav class="jump">{{NAV}}</nav>
 </div>
 {{BODY}}
@@ -165,7 +186,7 @@ document.addEventListener('click',e=>{
     const seek=()=>{try{ma.currentTime=s}catch(e){}};
     if(ma.readyState>0){seek()}else{ma.addEventListener('loadedmetadata',seek,{once:true});ma.load()}
     ma.play();return;}
-  const b=e.target.closest('button.copy');if(b){e.preventDefault();e.stopPropagation();copyText(b.dataset.copy);b.textContent='コピーした';setTimeout(()=>b.textContent='コピー',1400);return;}
+  const b=e.target.closest('button.copy');if(b){e.preventDefault();e.stopPropagation();copyText(b.dataset.copy);b.textContent='コピーした';setTimeout(()=>b.textContent=b.dataset.label||'コピー',1400);return;}
   if(e.target.id==='mpclose'){ma.pause();mp.classList.remove('on');}
 });
 document.querySelectorAll('.openall').forEach(btn=>btn.addEventListener('click',()=>{
